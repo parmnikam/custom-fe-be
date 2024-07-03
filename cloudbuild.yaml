@@ -1,0 +1,9 @@
+steps:
+  # Replace with your specific build steps (e.g., installing dependencies, building your application)
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/orbital-stream-428208-q9/image-app', '.']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/orbital-stream-428208-q9/image-app']
+  # Replace with your deployment step (e.g., deploying to App Engine, Kubernetes, Cloud Run, etc.)
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['run', 'deploy', 'sample-app', '--image', 'gcr.io/orbital-stream-428208-q9/image-app', '--platform', 'managed', '--region', 'global']
