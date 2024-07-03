@@ -7,3 +7,6 @@ steps:
   # Replace with your deployment step (e.g., deploying to App Engine, Kubernetes, Cloud Run, etc.)
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['run', 'deploy', 'sample-app', '--image', 'gcr.io/orbital-stream-428208-q9/image-app', '--platform', 'managed', '--region', 'global']
+options:
+  logging: CLOUD_LOGGING_ONLY
+
